@@ -60,7 +60,7 @@ pipeline {
                     docker rm stats-app || true
                     
                     docker run -d \
-                      --name zeno-production-app \
+                      --name stats-production-app \
                       --restart always \
                       -p 80:5000 \
                       -e APP_VERSION=${IMAGE_TAG} \

@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  zeno-app:
+  stats-app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mk-cloud:latest
-    container_name: Cloud-production-app
+    image: stats-app:latest
+    container_name: stats-production-app
     restart: always
     ports:
       - "80:5000"

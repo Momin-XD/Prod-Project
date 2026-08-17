@@ -1,0 +1,85 @@
+# Version control
+.git
+.gitignore
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# Python cache & build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+
+# Environment & secrets
+.env
+.env.local
+*.pem
+*.key
+.aws/
+.ssh/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# CI/CD
+Jenkinsfile
+.github/
+.gitlab-ci.yml
+
+# Documentation (not needed in container)
+README.md
+docs/
+*.md
+CONTRIBUTING.md
+LICENSE
+
+# Tests (optional - remove if you want to run tests in container)
+tests/
+test_*.py
+scripts/health_check.py
+
+# Docker files (don't copy into image)
+Dockerfile
+docker-compose.yml
+.dockerignore
+*.swo
+.DS_Store
+Thumbs.db
+
+# Screenshot dumps from root
+Screenshot*.png
+Screenshot*.jpg

@@ -55,9 +55,9 @@ pipeline {
         stage('Deploy Container Locally on Slave') {
             steps {
                 sh '''
-                    # Old container stop karke naya image run karna
-                    docker stop stats-app || true
-                    docker rm stats-app || true
+                    # Stop and remove existing container before redeployment 
+                    docker stop stats-production-app || true
+                    docker rm stats-production-app || true
                     
                     docker run -d \
                       --name stats-production-app \

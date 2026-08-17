@@ -17,4 +17,4 @@ def test_status_endpoint(client):
     assert response.status_code == 200
     data = response.get_json()
     assert data["status"] == "healthy"
-    assert data["service"] == "MK-cloud-app"
+    assert data["service"] == "stats-app"

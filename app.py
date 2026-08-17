@@ -45,7 +45,7 @@ def home():
 def status():
     return jsonify({
         "status": "healthy",
-        "service": "MK-cloud-app",
+        "service": "stats-app",
         "uptime_seconds": int(time.time() - START_TIME),
         "version": os.getenv("APP_VERSION", "1.0.0")
     }), 200

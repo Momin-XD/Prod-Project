@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'Prod-Node' // Aapke Slave node ka label
+            label 'Prod-Node'
         }
     }
 

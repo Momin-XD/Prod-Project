@@ -26,7 +26,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/env.imageName:Latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/env.ImageName:latest
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v0.1.5
@@ -35,10 +35,10 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/env.imageName:Latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/env.ImageName:latest
             docker stop stats-production-app || true
             docker rm stats-production-app || true
             docker run -d --name stats-production-app -p 80:5000 --restart always \
               -e APP_ENV=production \
               -e APP_VERSION=1.0.0 \
-              ${{ secrets.DOCKER_USERNAME }}/env.imageName:Latest
+              ${{ secrets.DOCKER_USERNAME }}/env.ImageName:latest
